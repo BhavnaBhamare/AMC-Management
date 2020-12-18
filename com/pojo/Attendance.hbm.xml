@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 20, 2019 5:37:18 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pojo.Attendance" table="attendance" catalog="mehatasoft">
+        <id name="aid" type="java.lang.Integer">
+            <column name="aid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="employee" class="com.pojo.Employee" fetch="select">
+            <column name="emp_id" />
+        </many-to-one>
+        <property name="status" type="string">
+            <column name="status" length="200" />
+        </property>
+        <property name="adate" type="date">
+            <column name="adate" length="0" />
+        </property>
+    </class>
+</hibernate-mapping>

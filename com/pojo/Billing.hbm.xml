@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 20, 2019 5:37:18 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pojo.Billing" table="billing" catalog="mehatasoft">
+        <id name="billid" type="java.lang.Integer">
+            <column name="billid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="manageproduct" class="com.pojo.Manageproduct" fetch="select">
+            <column name="prod_id" />
+        </many-to-one>
+        <many-to-one name="customer" class="com.pojo.Customer" fetch="select">
+            <column name="cust_id" />
+        </many-to-one>
+        <property name="invoiceno" type="java.lang.Integer">
+            <column name="invoiceno" />
+        </property>
+        <property name="invoicedate" type="date">
+            <column name="invoicedate" length="0" />
+        </property>
+        <property name="warranty" type="string">
+            <column name="Warranty" length="200" />
+        </property>
+        <property name="quantity" type="java.lang.Integer">
+            <column name="quantity" />
+        </property>
+        <property name="unitprice" type="java.lang.Double">
+            <column name="unitprice" precision="22" scale="0" />
+        </property>
+        <property name="taxtype" type="string">
+            <column name="taxtype" length="200" />
+        </property>
+        <property name="taxvalue" type="java.lang.Integer">
+            <column name="taxvalue" />
+        </property>
+        <property name="totalamount" type="java.lang.Double">
+            <column name="totalamount" precision="22" scale="0" />
+        </property>
+        <property name="totaltax" type="java.lang.Double">
+            <column name="totaltax" precision="22" scale="0" />
+        </property>
+        <property name="discount" type="java.lang.Integer">
+            <column name="discount" />
+        </property>
+        <property name="netamount" type="java.lang.Double">
+            <column name="netamount" precision="22" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>
